@@ -13,5 +13,5 @@ window.addEventListener('scroll', function() {
 window.addEventListener('load', function() {
     setTimeout(function() {
         document.getElementById('loadingScreen').style.display = 'none';
-    }, 8000); // 5000 milliseconds = 5 seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
 });
