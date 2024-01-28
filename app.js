@@ -9,3 +9,9 @@ window.addEventListener('scroll', function() {
     applyRotation('shape3');
     applyRotation('shape4');
 });
+
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        document.getElementById('loadingScreen').style.display = 'none';
+    }, 8000); // 5000 milliseconds = 5 seconds
+});
