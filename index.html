@@ -9,51 +9,63 @@
 
 </head>
 
-
-<body>
-    <div id="loadingScreen">
-        <img src="microprocessor.jpg" alt="Loading..." />
-    </div>
-        
+<body>  
     <h1>Jasper Kimball</h1>
-    <div class="rounded-rectangle2"> 
-        <p>
-            <a href="mailto:jasper.kimball3@gmail.com">jasper.kimball3@gmail.com</a> | 
-            (917) 903-2876 | 
-            <a href="https://linkedin.com/in/jasper-kimball/">linkedin.com/in/jasper-kimball/</a> | 
-            <a href="https://github.com/jimballl">https://github.com/jimballl</a>
-        </p>
-    </div>
-    <div class="rounded-rectangle">
-        <h3>Northeastern University, Boston, MA</h3>
-        <p>B.S. in Computer Engineering and Computer Science (CE/CS) <span class="text-right">Expected May 2024</span></p>
-        <p>Cumulative GPA: 3.73</p>
-        <p>Coursework: Linear Systems, Statistics, Computer Systems, Embedded Design, Object Oriented Design, Algorithms and Data, Foundations of Data Science, Database Design, Fundamentals of Software Engineering</p>
-    </div>
-    <div class="rounded-rectangle">
-        <h2>Johnson & Johnson - Abiomed, Danvers, MA</h2>
-        <h3>Post-Market / Data Engineering Co-op Jul-Dec 2023</h3>
-        <ul>
-            <li>Developed an object-oriented Python tool – utilizing, Pandas, Openpyxl, Tkinter, and regular expressions – to automate the composition, reformatting, and visual layout of complex medical log data</li>
-            <li>Automated the cloud-based extraction of targeted medical log data – utilizing multiple APIs, Pandas, and SQL queries - to save an estimated 177 hours for the global post-market engineering team in 2024</li>
-            <li>Collaborated with other Data Engineers on a Python data pipeline that ETLs (extracts, transforms, & loads) data and audits changes from the Salesforce database in MSSQL server tables to differentiate device failure modes</li>
-            <li>Built a Python script that parsed frequencies of user-interface events in over 3,000 device failure-linked logs and cross-referenced results with the Software Engineering Team’s graphical data in JAMA to aid data visualization</li>
-        </ul>
-
-        <h2>Siemens Healthineers – Endovascular Robotics, Newton, MA</h2>
-        <h3>Software Development Engineering Co-op Jun-Dec 2022</h3>
-        <ul>
-            <li>Performed over 50 formal system and network verification tests – utilizing Windows Boot Manager and SSH via PowerShell terminal - for a remote vascular interventional surgery, to prepare it for clinical studies</li>
-            <li>Created an Excel Visual Basic Macro that synchronized with an integrated Python Selenium program to scrape HTML components from Helix ALM’s webpage to streamline and plot company-wide testing metrics.</li>
-            <li>Developed an algorithm using Python and Linux command-line utilities that parsed 500+ client-facing files to reveal complex strings relating to software issues within the team’s Azure DevOps Git repository</li>
-        </ul>
+    <div class="tabs">
+        <button class="tablink" onclick="openTab('Tab1', this)">About Me and More</button>
+        <button class="tablink" onclick="openTab('Tab2', this)">Resume</button>
+        <button class="tablink" onclick="openTab('Tab3', this)">TBD</button>
     </div>
 
-<!-- 
-    <div class="shape" id="shape1"></div>
-    <div class="shape" id="shape2"></div>
-    <div class="shape" id="shape3"></div>
-    <div class="shape" id="shape4"></div> -->
+    <!-- first tab  -->
+    <div id="Tab1" class="tabcontent" onclick="openTab('Tab1', this)">   
+        <div class="rounded-rectangle">
+            <h2>About Me</h2>
+            <p>Hi, my name is Jasper Kimball!</p>
+            <p>I am a Computer Engineering and Computer Science student at Northeastern University. I am seeking full-time employment after I graduate in May 2024. My expertise is primarily in data engineering, software development, and embedded systems. I have interests outside of my field including economics, global politics, and psychology.</p>
+            <p>Please check out the 'Resume' tab for more information about my work experience and education.</p>        </div>
+        <div class="rounded-rectangle">
+            <h2>Favorite Investment Indices</h2><h3>(Updates Hourly)</h3>
+            <p id="stockInfo"></p>
+            <script src="stocks.js"></script>
+        </div>
+    </div>
+
+    <!-- Second Tab -->
+    <div id="Tab2" class="tabcontent" onclick="openTab('Tab2', this)">        
+        <div class="rounded-rectangle2"> 
+                <p>
+                    <a href="mailto:jasper.kimball3@gmail.com">jasper.kimball3@gmail.com</a> | 
+                    (917) 903-2876 | 
+                    <a href="https://linkedin.com/in/jasper-kimball/">linkedin.com/in/jasper-kimball/</a> | 
+                    <a href="https://github.com/jimballl">https://github.com/jimballl</a>
+                </p>
+            </div>
+            <div class="rounded-rectangle">
+                <h3>Northeastern University, Boston, MA</h3>
+                <p>B.S. in Computer Engineering and Computer Science (CE/CS) <span class="text-right">Expected May 2024</span></p>
+                <p>Coursework: Linear Systems, Statistics, Computer Systems, Embedded Design, Object Oriented Design, Algorithms and Data, Foundations of Data Science, Database Design, Fundamentals of Software Engineering</p>
+            </div>
+            <div class="rounded-rectangle">
+                <h2>Johnson & Johnson - Abiomed, Danvers, MA</h2>
+                <h3>Post-Market / Data Engineering Co-op <span class="text-right">Jul-Dec 2023</span></h3>
+                <ul>
+                    <li>Developed an object-oriented Python tool – utilizing, Pandas, Openpyxl, Tkinter, and regular expressions – to automate the composition, reformatting, and visual layout of complex medical log data</li>
+                    <li>Automated the cloud-based extraction of targeted medical log data – utilizing multiple APIs, Pandas, and SQL queries - to save an estimated 177 hours for the global post-market engineering team in 2024</li>
+                    <li>Collaborated with other Data Engineers on a Python data pipeline that ETLs (extracts, transforms, & loads) data and audits changes from the Salesforce database in MSSQL server tables to differentiate device failure modes</li>
+                    <li>Built a Python script that parsed frequencies of user-interface events in over 3,000 device failure-linked logs and cross-referenced results with the Software Engineering Team’s graphical data in JAMA to aid data visualization</li>
+                </ul>
+
+                <h2>Siemens Healthineers – Endovascular Robotics, Newton, MA</h2>
+                <h3>Software Development Engineering Co-op <span class="text-right">Jun-Dec 2022</span></h3>
+                <ul>
+                    <li>Performed over 50 formal system and network verification tests – utilizing Windows Boot Manager and SSH via PowerShell terminal - for a remote vascular interventional surgery, to prepare it for clinical studies</li>
+                    <li>Created an Excel Visual Basic Macro that synchronized with an integrated Python Selenium program to scrape HTML components from Helix ALM’s webpage to streamline and plot company-wide testing metrics.</li>
+                    <li>Developed an algorithm using Python and Linux command-line utilities that parsed 500+ client-facing files to reveal complex strings relating to software issues within the team’s Azure DevOps Git repository</li>
+                </ul>
+            </div>
+        </div>
+    </button>
 
 </body>
 

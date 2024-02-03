@@ -1,17 +1,16 @@
-function applyRotation(elementId) {
-    var rotation = `rotate(${window.scrollY / 2}deg)`;
-    document.getElementById(elementId).style.transform = rotation;
-}
+function openTab(tabId, elmnt) {
+    var i, tabcontent, tablinks;
+  
+    // Hide all elements with class="tabcontent"
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+  
+    // Show the specific tab content
+    document.getElementById(tabId).style.display = "block";
+  }
 
-window.addEventListener('scroll', function() {
-    applyRotation('shape1');
-    applyRotation('shape2');
-    applyRotation('shape3');
-    applyRotation('shape4');
-});
-
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        document.getElementById('loadingScreen').style.display = 'none';
-    }, 5000); // 5000 milliseconds = 5 seconds
-});
+window.onload = function() {
+    document.getElementById("Tab1").click();
+};
