@@ -7,7 +7,7 @@ h1 {
     color: lightblue;
     text-align: center;
 }
-h2, h3 {
+h2, h4 {
     margin:0;
 }
 
@@ -49,7 +49,7 @@ body {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
-    display: None;
+    display: none;
 }
   
 .tablink {
