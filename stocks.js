@@ -51,5 +51,5 @@ symbols.forEach((symbol, index) => {
     }
 
     // Fetch stock data every _ minutes
-    setInterval(() => fetchStockData(symbol), 3600000);
+    // setInterval(() => fetchStockData(symbol), 3600000);
 });
