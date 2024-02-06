@@ -32,24 +32,47 @@ function fetchStockData(symbol) {
 
 const symbols = ['QQQ', 'AAPL', 'MSFT'];
 
-symbols.forEach((symbol, index) => {
-    // If the current symbol is the first one in the array, clear the innerHTML
-    if (index === 0) {
-        document.getElementById('stockInfo').innerHTML = '';
-    }
-    // Retrieve the previous high and low values from localStorage
+// Promise.all(symbols.forEach((symbol, index) => {
+//     // If the current symbol is the first one in the array, clear the innerHTML
+//     if (index === 0) {
+//         document.getElementById('stockInfo').innerHTML = '';
+//     }
+//     // Retrieve the previous high and low values from localStorage
+//     const previousHigh = localStorage.getItem(`${symbol}High`);
+//     const previousLow = localStorage.getItem(`${symbol}Low`);
+//     const previousColor = localStorage.getItem(`${symbol}Color`)? localStorage.getItem(`${symbol}Color`): 'black';
+
+//     if (previousHigh && previousLow) {
+//         // If previous high and low values exist in localStorage, display them
+//         document.getElementById('stockInfo').innerHTML += `<strong>${symbol}</strong><br>high= ${previousHigh}, low= ${previousLow}<br>`;
+//         document.getElementById('stockInfo').style.color = previousColor;
+//     } else {
+//         fetchStockData(symbol);
+//     }
+
+//     // Fetch stock data every _ minutes
+//     // setInterval(() => fetchStockData(symbol), 3600000);
+// }));
+
+
+Promise.all(symbols.map(symbol => {
     const previousHigh = localStorage.getItem(`${symbol}High`);
     const previousLow = localStorage.getItem(`${symbol}Low`);
-    const previousColor = localStorage.getItem(`${symbol}Color`)? localStorage.getItem(`${symbol}Color`): 'black';
+    const previousColor = localStorage.getItem(`${symbol}Color`);
 
     if (previousHigh && previousLow) {
-        // If previous high and low values exist in localStorage, display them
-        document.getElementById('stockInfo').innerHTML += `<strong>${symbol}</strong><br>high= ${previousHigh}, low= ${previousLow}<br>`;
-        document.getElementById('stockInfo').style.color = previousColor;
+        return Promise.resolve({ symbol, high: previousHigh, low: previousLow, color: previousColor });
     } else {
-        fetchStockData(symbol);
+        return fetchStockData(symbol);
     }
-
-    // Fetch stock data every _ minutes
-    // setInterval(() => fetchStockData(symbol), 3600000);
+}))
+.then(results => {
+    const stockInfo = document.getElementById('stockInfo');
+    stockInfo.innerHTML = '';
+    results.forEach(({ symbol, high, low, color }) => {
+        const symbolElement = document.createElement('div');
+        symbolElement.innerHTML = `<strong>${symbol}</strong><br>high= ${high}, low= ${low}<br>`;
+        symbolElement.style.color = color;
+        stockInfo.appendChild(symbolElement);
+    });
 });
