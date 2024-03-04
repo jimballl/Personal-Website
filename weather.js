@@ -8,6 +8,7 @@ fetch('https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be63080624
         let imageLoc;
         let imageMap = {
             'Clear': '/weather-images/sunny.png',
+            'Sunny' : '/weather-images/sunny.png',
             'Cloudy': '/weather-images/cloudy.png',
             'Partly cloudy': '/weather-images/cloudy.png',
             'Overcast': '/weather-images/overcast.png',

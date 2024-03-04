@@ -33,23 +33,34 @@ function fetchStockData(symbol) {
 const symbols = ['QQQ', 'AAPL', 'MSFT'];
 
 Promise.all(symbols.map(symbol => {
-    const previousHigh = localStorage.getItem(`${symbol}High`);
-    const previousLow = localStorage.getItem(`${symbol}Low`);
-    const previousColor = localStorage.getItem(`${symbol}Color`);
+    return new Promise((resolve, reject) => {
+        const previousHigh = localStorage.getItem(`${symbol}High`);
+        const previousLow = localStorage.getItem(`${symbol}Low`);
+        const previousColor = localStorage.getItem(`${symbol}Color`);
 
-    if (previousHigh && previousLow) {
-        return Promise.resolve({ symbol, high: previousHigh, low: previousLow, color: previousColor });
-    } else {
-        return fetchStockData(symbol);
-    }
+        if (previousHigh && previousLow) {
+            resolve({ symbol, high: previousHigh, low: previousLow, color: previousColor });
+        } else {
+            fetchStockData(symbol)
+                .then(data => resolve(data))
+                .catch(error => {
+                    console.error(`Error fetching data for ${symbol}: ${error}`);
+                    resolve(null);  // Resolve with null to prevent Promise.all from rejecting
+                });
+        }
+    });
 }))
 .then(results => {
     const stockInfo = document.getElementById('stockInfo');
     stockInfo.innerHTML = '';
-    results.forEach(({ symbol, high, low, color }) => {
-        const symbolElement = document.createElement('div');
-        symbolElement.innerHTML = `<strong>${symbol}</strong><br>high= ${high}, low= ${low}<br>`;
-        symbolElement.style.color = color;
-        stockInfo.appendChild(symbolElement);
+    results.forEach(result => {
+        if (result) {  // Check if result is not null
+            const { symbol, high, low, color } = result;
+            const symbolElement = document.createElement('div');
+            symbolElement.innerHTML = `<strong>${symbol}</strong><br>high= ${high}, low= ${low}<br>`;
+            symbolElement.style.color = color;
+            stockInfo.appendChild(symbolElement);
+        }
     });
-});
+})
+.catch(error => console.error(`Error in Promise.all: ${error}`));
