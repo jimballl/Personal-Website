@@ -1,0 +1,45 @@
+.footer {
+    background-color: black;
+    color: rgb(203, 232, 242);
+    font-size: 10px;
+}
+
+.footer-content {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgb(221, 237, 243);
+    margin: 15% auto;
+    padding: 1%;
+    border: 1% solid #636363;
+    width: 80%;
+    text-align: left;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.close {
+    color: #6f6f6f;
+    float: right;
+    font-weight: bold;
+    font-size: 30px;
+}

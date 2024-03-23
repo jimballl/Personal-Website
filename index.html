@@ -2,7 +2,8 @@
 <html>
 
 <head>
-<link rel="stylesheet" href="app.css"/>
+    <link rel="stylesheet" href="css-documents/app.css"/>
+    <link rel="stylesheet" href="css-documents/footer.css"/>
 </head>
 
 <body>    
@@ -15,22 +16,22 @@
     <!-- first tab  -->
     <div id="Tab1" class="tabcontent" onclick="openTab('Tab1', this)">   
         <div class="rounded-rectangle">
-            <h2>Weather Data</h2><h4>(Data obtained from WeatherAPI)</h4>
+            <h2>Local Weather Data</h2><h4>(Data obtained from WeatherAPI)</h4>
             <p id="weatherData"></p>
-            <script src="weather.js"></script>
+            <script src="javascript/weather.js"></script>
             <a href="https://www.flaticon.com/free-icons/weather" title="weather icons" style="font-size: 0.8em;">Weather icons created by iconixar - Flaticon</a>
         </div>
         <div class="rounded-rectangle">
             <h2>Notable Investment Indices</h2><h4>(Data updated regulary from Twelve Data)</h4>
             <p id="stockInfo"></p>
-            <script src="stocks.js"></script>
+            <script src="javascript/stocks.js"></script>
         </div>
     </div>
 
     <!-- Second Tab -->
     <div id="Tab2" class="tabcontent" onclick="openTab('Tab2', this)">        
         <div class="rounded-rectangle">
-            <h3>Northeastern University, Boston, MA</h3>
+            <h2>Northeastern University, Boston, MA</h2>
             <h3><p>B.S. in Computer Engineering and Computer Science (CE/CS) <span class="text-right">Expected May 2024</span></p></h3>
             <p>Coursework: Linear Systems, Statistics, Computer Systems, Embedded Design, Object Oriented Design, Algorithms and Data, Foundations of Data Science, Database Design, Fundamentals of Software Engineering</p>
         </div>
@@ -68,17 +69,23 @@
             <p>I am a Computer Engineering and Computer Science student at Northeastern University. I am seeking full-time employment after I graduate in May 2024. My expertise is in data engineering, software development, and embedded systems. I have interests outside of my field including economics, global politics, and psychology.</p>
             <p>Please check out the 'Resume' and 'Web Projects' tabs for more information about my experience and education.</p>
         </div>
-        <div class="white-rounded-rectangle">
-            <img src='main-images/JNJ.webp' alt="J&J Logo">
-            <img src='main-images/siemens.png' alt="Siemens Healthineers Logo">
-            <img src='main-images/NU logo.webp' alt="NEU Logo">
-        </div>
+    <div class="white-rounded-rectangle">
+        <a href="https://www.jnj.com/"><img src='main-images/JNJ.png' alt="J&J Logo"></a>
+        <a href="https://www.siemens-healthineers.com/en-us/endovascular-robotics"><img src='main-images/siemens.png' alt="Siemens Healthineers Logo"></a>
+        <a href="https://coe.northeastern.edu/"><img src='main-images/NU logo.png' alt="NEU Logo"></a>    </div>
     </div>
     <div class="footer">
-        <p>© 2024 Jasper Kimball</p>
+        <div class="footer-content">
+            <p>© 2024 Jasper Kimball</p>
+            <button id="privacyPolicyButton" class="tablink">Privacy Policy</button>
+        </div>
     </div>
 
-    <script src="app.js"></script>
+    // Modal for privacy policy placeholder
+    <div id="privacyPolicyModal" class="modal"></div>
+
+    <script src="javascript/app.js"></script>
+    <script src="javascript/modal.js"></script>
 </body>
 
 </html>

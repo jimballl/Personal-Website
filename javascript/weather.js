@@ -1,5 +1,4 @@
-fetch('https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be630806240502&q=Boston')
-    .then(response => response.json())
+fetch(`https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be630806240502&q=auto:ip&nocache=${new Date().getTime()}`)    .then(response => response.json())
     .then(data => {
         const temperature = data.current.temp_f;
         const condition = data.current.condition.text;
@@ -13,6 +12,7 @@ fetch('https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be63080624
             'Partly cloudy': '/weather-images/cloudy.png',
             'Overcast': '/weather-images/overcast.png',
             'Rain': '/weather-images/rain.png',
+            'Light rain': '/weather-images/light-rain.png',
             'Snow': '/weather-images/snow.png'
         };
 
@@ -22,8 +22,8 @@ fetch('https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be63080624
             imageLoc = imageMap[condition] || '/weather-images/default.png';
         }
 
-        document.getElementById('weatherData').innerHTML += `Temperature in Boston: ${temperature}°F<br>`;
-        document.getElementById('weatherData').innerHTML += `Conditions in Boston: ${condition}<br>`;
+        document.getElementById('weatherData').innerHTML += `Temperature in ${data.location.name}: ${temperature}°F<br>`;
+        document.getElementById('weatherData').innerHTML += `Conditions in ${data.location.name}: ${condition}<br>`;
         document.getElementById('weatherData').innerHTML += `<img src="${imageLoc}" width="15%" height="15%">`;    })
     .catch(error => {
         document.getElementById('weatherData').innerHTML = `Error: ${error.message}`;
