@@ -1,16 +1,18 @@
+// Switching between Tabs and hiding the other tabs
 function openTab(tabId, elmnt) {
-    var i, tabcontent, tablinks;
+    var tabInfo;
   
     // Hide all elements with class="tabcontent"
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+    tabInfo = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabInfo.length; i++) {
+      tabInfo[i].style.display = "none";
     }
-  
+    
     // Show the specific tab content
     document.getElementById(tabId).style.display = "block";
   }
 
+// Set the default tab on page load
 window.onload = function() {
-    document.getElementById("Tab1").click();
+    document.getElementById("Tab3").click();
 };

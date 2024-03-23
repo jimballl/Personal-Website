@@ -5,6 +5,7 @@
 /* headers */
 h1 {
     color: lightblue;
+    font-size: xx-large;
     text-align: center;
 }
 h2, h4 {
@@ -20,29 +21,51 @@ body {
 }
 
 .rounded-rectangle2 {
-    width: 70%;
+    width: 100%;
     height: auto;
     font-size: large;
     background-color: rgb(203, 232, 242);
-    border-radius: 20px;
-    padding: 0.5px;
+    padding: 0.5px 0;
     text-align: center;
-    margin: 0 auto;
+    margin: 0.5% auto;
 }
+
 
 .text-right {
     float: right;
 }
 
 .rounded-rectangle {
-    width: 70%;
+    width: 100%;
     height: auto;
     font-size: x-large;
     background-color: rgb(203, 232, 242);
-    border-radius: 20px;
-    padding: 20px;
+    padding: 20px 0;
     text-align: left;
-    margin: 1% auto;
+    margin: 0.5% auto;
+}
+
+.white-rounded-rectangle {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    width: 100%;
+    margin: 0.5% auto;
+}
+
+.circular-image {
+    border-radius: 50%;
+    top: 0;
+    vertical-align: top;
+    float: right;
+    width: 10%;
+    height: 10%;
+    margin: 0 1% 10% 5%;
+}
+
+.white-rounded-rectangle img {
+    width: 100px;
+    height: auto;
 }
 
 .tabcontent {
@@ -51,15 +74,33 @@ body {
     color: inherit;
     display: none;
 }
+
   
 .tablink {
     cursor: pointer;
     color: white;
-    background-color: transparent;
-    border: 2px solid grey;
-    margin-bottom: 1%;
-    width: 20%;
-    font-size: 15px;
-    padding: 1% 2%;
-    box-shadow: 3px 3px 5px rgb(203, 232, 242);
+    background-color: black;
+    border: none;
+    margin-bottom: 0%;
+    width: 100%;
+    font-size: 20px;
+    padding: 0.2% 0%;
+}
+
+.tablink-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: sticky;
+    top: 0;
+    padding: 0.1% 0;
+    background-color: black;
+    width: 100%;
+}
+
+.footer {
+    background-color: black;
+    color: rgb(203, 232, 242);
+    font-size: 10px;
 }

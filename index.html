@@ -5,21 +5,15 @@
 <link rel="stylesheet" href="app.css"/>
 </head>
 
-<body>  
-    <h1>Jasper Kimball</h1>
-    <div class="tabs">
-        <button class="tablink" onclick="openTab('Tab1', this)">About Me and More</button>
+<body>    
+    <div class="tablink-container">
+        <button class="tablink" onclick="openTab('Tab1', this)">Web Projects</button>
+        <button class="tablink" onclick="openTab('Tab3', this)"><h1>Jasper Kimball</h1></button>
         <button class="tablink" onclick="openTab('Tab2', this)">Resume</button>
     </div>
-
+    
     <!-- first tab  -->
     <div id="Tab1" class="tabcontent" onclick="openTab('Tab1', this)">   
-        <div class="rounded-rectangle">
-            <h2>About Me</h2>
-            <p>Hi, my name is Jasper Kimball!</p>
-            <p>I am a Computer Engineering and Computer Science student at Northeastern University. I am seeking full-time employment after I graduate in May 2024. My expertise is in data engineering, software development, and embedded systems. I have interests outside of my field including economics, global politics, and psychology.</p>
-            <p>Please check out the 'Resume' tab for more information about my work experience and education.</p>
-        </div>
         <div class="rounded-rectangle">
             <h2>Weather Data</h2><h4>(Data obtained from WeatherAPI)</h4>
             <p id="weatherData"></p>
@@ -35,12 +29,6 @@
 
     <!-- Second Tab -->
     <div id="Tab2" class="tabcontent" onclick="openTab('Tab2', this)">        
-        <div class="rounded-rectangle2"> 
-            <p>
-                <a href="mailto:jasper.kimball3@gmail.com">jasper.kimball3@gmail.com</a> |  
-                <a href="https://linkedin.com/in/jasper-kimball/">linkedin.com/in/jasper-kimball/</a> 
-            </p>
-        </div>
         <div class="rounded-rectangle">
             <h3>Northeastern University, Boston, MA</h3>
             <h3><p>B.S. in Computer Engineering and Computer Science (CE/CS) <span class="text-right">Expected May 2024</span></p></h3>
@@ -48,7 +36,7 @@
         </div>
         <div class="rounded-rectangle">
             <h2>Johnson & Johnson - Abiomed, Danvers, MA</h2>
-            <h3>Post-Market / Data Engineering Co-op <span class="text-right">Jul-Dec 2023</span></h3>
+            <h3>Data Engineering Co-op <span class="text-right">Jul-Dec 2023</span></h3>
             <ul>
                 <li>Developed an object-oriented Python tool – utilizing, Pandas, Openpyxl, Tkinter, and regular expressions – to automate the composition, reformatting, and visual layout of complex medical log data</li>
                 <li>Automated the cloud-based extraction of targeted medical log data – utilizing multiple APIs, Pandas, and SQL queries - to save an estimated 177 hours for the global post-market engineering team in 2024</li>
@@ -64,6 +52,30 @@
                 <li>Developed an algorithm using Python and Linux command-line utilities that parsed 500+ client-facing files to reveal complex strings relating to software issues within the team’s Azure DevOps Git repository</li>
             </ul>
         </div>
+    </div>
+    <!-- third tab -->
+    <div id="Tab3" class="tabcontent" onclick="openTab('Tab3', this)">
+        <div class="rounded-rectangle2"> 
+            <p>
+                <a href="mailto:jasper.kimball3@gmail.com">jasper.kimball3@gmail.com</a> |  
+                <a href="https://linkedin.com/in/jasper-kimball/">linkedin.com/in/jasper-kimball/</a> 
+            </p>
+        </div>
+        <div class="rounded-rectangle">
+            <img src='main-images/Me.jpeg' class='circular-image'>
+            <h2>About Me</h2>
+            <p>Hi, my name is Jasper Kimball!</p>
+            <p>I am a Computer Engineering and Computer Science student at Northeastern University. I am seeking full-time employment after I graduate in May 2024. My expertise is in data engineering, software development, and embedded systems. I have interests outside of my field including economics, global politics, and psychology.</p>
+            <p>Please check out the 'Resume' and 'Web Projects' tabs for more information about my experience and education.</p>
+        </div>
+        <div class="white-rounded-rectangle">
+            <img src='main-images/JNJ.webp' alt="J&J Logo">
+            <img src='main-images/siemens.png' alt="Siemens Healthineers Logo">
+            <img src='main-images/NU logo.webp' alt="NEU Logo">
+        </div>
+    </div>
+    <div class="footer">
+        <p>© 2024 Jasper Kimball</p>
     </div>
 
     <script src="app.js"></script>
