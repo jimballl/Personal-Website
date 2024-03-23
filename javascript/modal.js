@@ -9,7 +9,7 @@ document.getElementById('privacyPolicyModal').innerHTML = `
         <h3>Use of Data</h3>
         <p>We use this aggregate data to monitor site traffic and improve the user experience. No individual user can be identified from this data.</p>
         <h3>Data Sharing</h3>
-        <p>We do not share any data with third parties, as the information we collect is limited to the number of visitors and contains no personal details.</p>
+        <p>We do not share any personal data with third parties. The only exception is that we send the IP address of visitors to WeatherAPI to provide weather-related functionality on our website. No other information is shared, and the IP address is used strictly for this purpose. For more details on how WeatherAPI handles privacy, please refer to their privacy policy at <a href="https://www.weatherapi.com/privacy.aspx" target="_blank">WeatherAPI Privacy Policy</a>.</p>
         <h3>Cookies</h3>
         <p>Our website does not use cookies, as we do not track individual users or their behavior.</p>
         <h3>Changes to This Policy</h3>

@@ -1,5 +1,7 @@
-fetch(`https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be630806240502&q=auto:ip&nocache=${new Date().getTime()}`)    .then(response => response.json())
+fetch(`https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be630806240502&q=auto:ip&nocache=${new Date().getTime()}`)    
+    .then(response => response.json())
     .then(data => {
+        // Extracting the relevant data from the JSON object
         const temperature = data.current.temp_f;
         const condition = data.current.condition.text;
         const isDay = data.current.is_day;
@@ -16,6 +18,7 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be63080624
             'Snow': '/weather-images/snow.png'
         };
 
+        // Setting the image based on the weather condition
         if (isDay === 0) {
             imageLoc = '/weather-images/moon.png';
         } else {
