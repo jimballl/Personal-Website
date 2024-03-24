@@ -11,6 +11,9 @@ h1 {
 h2, h4 {
     margin:0;
 }
+h2, h3 {
+    margin:0;
+}
 
 
 body { 
@@ -29,7 +32,7 @@ body {
     background-color: rgb(203, 232, 242);
     padding: 0.5px 0;
     text-align: center;
-    margin: 0.5% auto;
+    margin: 7px auto;
 }
 
 
@@ -42,9 +45,9 @@ body {
     height: auto;
     font-size: x-large;
     background-color: rgb(203, 232, 242);
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: left;
-    margin: 10px auto; 
+    margin: 7px auto; 
 }
 
 .white-rounded-rectangle {
@@ -52,7 +55,7 @@ body {
     justify-content: space-around;
     background-color: white;
     width: 100%;
-    margin: 10px auto;
+    margin: 7px auto;
     object-fit: contain;
 }
 
@@ -60,7 +63,7 @@ body {
     width: 100px;
     height: 50px;
     object-fit: contain;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .circular-image {
