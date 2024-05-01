@@ -15,7 +15,7 @@ document.getElementById('privacyPolicyModal').innerHTML = `
         <h3>Changes to This Policy</h3>
         <p>We reserve the right to update this privacy policy at any time. Any changes will be posted on this page.</p>
         <h3>Contact Us</h3>
-        <p>If you have any questions about our privacy policy, please reach out to us at jasper-kimball3@gmail.com.</p>
+        <p>If you have any questions about our privacy policy, please reach out to us at jasper.kimball3@gmail.com.</p>
         <p>This policy is effective as of March 23, 2024.</p>
     </div>
 `;

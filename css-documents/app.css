@@ -23,6 +23,13 @@ body {
     text-align: center;
 }
 
+.rounded-rectangle2 p, .rounded-rectangle2 h1, .rounded-rectangle2 h2, .rounded-rectangle2 h3, .rounded-rectangle2 h4 {
+    padding: 0 12px; 
+}
+
+.rounded-rectangle p, .rounded-rectangle h1, .rounded-rectangle h2, .rounded-rectangle h3, .rounded-rectangle h4 {
+    padding: 0 12px; 
+}
 
 
 .rounded-rectangle2 {
