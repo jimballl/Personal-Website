@@ -26,7 +26,7 @@ fetch(`https://api.weatherapi.com/v1/current.json?key=3dae079290ce4dd2be63080624
             imageLoc = imageMap[condition] || '/weather-images/cloudy.png';
         }
         var h2Element = document.querySelector('#weatherHeader');
-        h2Element.innerHTML = `Local Weather in ${data.location.name}`;
+        h2Element.innerHTML = `Local Weather`;
         document.getElementById('weatherData').innerHTML += `Temperature: ${temperature}°F<br>`;
         document.getElementById('weatherData').innerHTML += `Conditions: ${condition}<br>`;
         document.getElementById('weatherData').innerHTML += `<img src="${imageLoc}" width="15%" height="15%">`;    })
